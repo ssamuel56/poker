@@ -4,7 +4,8 @@ require 'minitest/autorun'
 class Test_poker_deck < Minitest::Test
 
   def test_that_deck_is_array
-    assert_equal("", Deck.cards)
+    deck = Deck.new
+    assert_equal([]], deck.cards)
   end
 
 end

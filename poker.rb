@@ -14,4 +14,8 @@ class Deck
     return ary.flatten
   end
 
+  def shuffle
+    return self.cards.shuffle
+  end
+
 end

@@ -1,9 +1,5 @@
 class Deck
 
-  def initialize()
-
-  end
-
   def cards
     ary = Array.new
     ["C", "D", "H", "S"].each do |s|
@@ -17,5 +13,12 @@ class Deck
   def shuffle
     return self.cards.shuffle
   end
+
+end
+
+
+class Player
+
+
 
 end

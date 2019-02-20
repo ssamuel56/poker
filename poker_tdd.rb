@@ -1,4 +1,4 @@
-require_relative 'deck.rb'
+require_relative 'poker.rb'
 require 'minitest/autorun'
 
 class Test_poker_deck < Minitest::Test
@@ -21,6 +21,11 @@ class Test_poker_deck < Minitest::Test
   def test_deck_is_random_with_shuffle
     deck = Deck.new
     refute(deck.cards == deck.shuffle)
+  end
+
+  def test_player_exist
+    black = Player.new
+    assert_equal(true, black.class)
   end
 
 end

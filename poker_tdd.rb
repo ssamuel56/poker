@@ -40,8 +40,14 @@ class Test_poker_deck < Minitest::Test
 
   def test_that_running_game_makes_players
     poker = Game.new
-    assert_equal("", poker.white)
-    assert_equal("", poker.black)
+    assert_equal(Player, poker.white.class)
+    assert_equal(Player, poker.black.class)
+  end
+
+  def test_that_player_hands_are_accessible
+    poker = Game.new
+    assert_equal(Array, poker.white.hand.class)
+    assert_equal(Array, poker.black.hand.class)
   end
 
 end

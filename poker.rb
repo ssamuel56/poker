@@ -34,5 +34,10 @@ class Game
 
   attr_accessor :white, :black
 
+  def initialize
+    @deck = Deck.new.shuffle
+    @white = Player.new
+    @black = Player.new
+  end
 
 end

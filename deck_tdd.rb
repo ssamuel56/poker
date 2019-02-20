@@ -1,4 +1,4 @@
-require_relative 'poker.rb'
+require_relative 'deck.rb'
 require 'minitest/autorun'
 
 class Test_poker_deck < Minitest::Test

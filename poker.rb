@@ -32,7 +32,7 @@ end
 
 class Game
 
-  attr_accessor :white, :black
+  attr_accessor :white, :black, :deck
 
   def initialize
     @deck = Deck.new.shuffle

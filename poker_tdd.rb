@@ -30,7 +30,7 @@ class Test_poker_deck < Minitest::Test
 
   def test_player_hand_is_array
     black = Player.new
-    assert_equal(Class, black.hand)
+    assert_equal([], black.hand)
   end
 
 end

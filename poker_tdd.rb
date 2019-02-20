@@ -33,4 +33,9 @@ class Test_poker_deck < Minitest::Test
     assert_equal([], black.hand)
   end
 
+  def test_game_is_a_class
+    poker = Game.new
+    assert_equal(Game, poker.class)
+  end
+
 end

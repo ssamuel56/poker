@@ -26,3 +26,9 @@ class Player
   end
 
 end
+
+class Game
+
+
+
+end

@@ -38,4 +38,10 @@ class Test_poker_deck < Minitest::Test
     assert_equal(Game, poker.class)
   end
 
+  def test_that_running_game_makes_players
+    poker = Game.new
+    assert_equal("", poker.white)
+    assert_equal("", poker.black)
+  end
+
 end

@@ -17,6 +17,7 @@ class Deck
 end
 
 
+
 class Player
 
   attr_accessor :hand
@@ -27,8 +28,11 @@ class Player
 
 end
 
+
+
 class Game
 
+  attr_accessor :white, :black
 
 
 end

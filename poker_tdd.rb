@@ -60,4 +60,11 @@ class Test_poker_deck < Minitest::Test
     assert_equal(52, poker.deck.count)
   end
 
+  def test_deal_game_deals_cards
+    poker = Game.new
+    poker.deal
+    assert_equal([], poker.white.hand)
+    assert_equal([], poker.white.hand)
+  end
+
 end

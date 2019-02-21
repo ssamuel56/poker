@@ -64,7 +64,19 @@ class Test_poker_deck < Minitest::Test
     poker = Game.new
     poker.deal
     assert_equal(5, poker.white.hand.count)
-    assert_equal(5, poker.white.hand.count)
+    assert_equal(5, poker.black.hand.count)
+  end
+
+  def test_that_player_hands_are_different
+    poker = Game.new
+    poker.deal
+    refute(poker.black.hand == poker.white.hand)
+  end
+
+  def test_cards_are_being_removed_from_deck
+    poker = Game.new
+    poker.deal
+    assert_equal(42, poker.deck.count)
   end
 
 end

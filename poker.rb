@@ -40,4 +40,11 @@ class Game
     @black = Player.new
   end
 
+  def deal
+    5.times do
+      @white.hand << @deck.delete_at(1)
+      @black.hand << @deck.delete_at(1)
+    end
+  end
+
 end

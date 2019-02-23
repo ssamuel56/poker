@@ -79,4 +79,13 @@ class Test_poker_deck < Minitest::Test
     assert_equal(42, poker.deck.count)
   end
 
+  def test_for_high_card
+    poker = Game.new
+    p poker.deck
+    poker.deal
+    poker.white.hand = []
+    poker.black.hand = []
+    assert_equal(0, poker.check_array(0))
+  end
+
 end

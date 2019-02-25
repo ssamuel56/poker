@@ -28,24 +28,7 @@ class Player
 
 end
 
-
-
-class Game
-
-  attr_accessor :white, :black, :deck
-
-  def initialize
-    @deck = Deck.new.shuffle
-    @white = Player.new
-    @black = Player.new
-  end
-
-  def deal
-    5.times do
-      @white.hand << @deck.delete_at(1)
-      @black.hand << @deck.delete_at(1)
-    end
-  end
+class Checker
 
   def return_suits(player)
     player_compare = Array.new
@@ -55,9 +38,32 @@ class Game
     return player_compare.sort.reverse
   end
 
+end
+
+
+
+class Game
+
+  attr_accessor :white, :black, :deck, :checker
+
+  def initialize
+    @deck = Deck.new.shuffle
+    @white = Player.new
+    @black = Player.new
+    @checker = Checker.new
+  end
+
+  def deal
+    5.times do
+      @white.hand << @deck.delete_at(1)
+      @black.hand << @deck.delete_at(1)
+    end
+  end
+
   def check_high_card
     [
-        return_suits(@white)[0] <=> return_suits(@black)[0]
+
+      @checker.return_suits(@white)[0] <=> @checker.return_suits(@black)[0]
     ]
   end
 

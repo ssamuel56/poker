@@ -93,7 +93,7 @@ class Test_poker_deck < Minitest::Test
     poker.white.hand = ["D9", "S5", "H8", "H12", "S7"]
     poker.black.hand = ["C12", "C5", "S2", "D6", "D7"]
     assert_equal([12, 9, 8, 7, 5], poker.return_suits(poker.white))
-    assert_equal([], poker.return_suits(poker.black))
+    assert_equal([12, 7, 6, 5, 2], poker.return_suits(poker.black))
   end
 
 end

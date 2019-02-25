@@ -38,6 +38,12 @@ class Checker
     return player_compare.sort.reverse
   end
 
+  def check_high_card(player1, player2)
+    [
+      self.return_suits(player1)[0] <=> self.return_suits(player2)[0]
+    ]
+  end
+
 end
 
 
@@ -60,11 +66,9 @@ class Game
     end
   end
 
-  def check_high_card
-    [
-
-      @checker.return_suits(@white)[0] <=> @checker.return_suits(@black)[0]
-    ]
+  def run_check
+    checker.check_high_card(@white, @black)
   end
+
 
 end

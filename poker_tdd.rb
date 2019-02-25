@@ -84,7 +84,22 @@ class Test_poker_deck < Minitest::Test
     poker.deal
     poker.white.hand = ["D9", "S5", "H8", "H12", "S7"]
     poker.black.hand = ["C12", "C5", "S2", "D6", "D7"]
-    assert_equal(0, poker.check_high_card[0])
+    assert_equal(
+      [0],
+      poker.checker.check_high_card(poker.white, poker.black)
+    )
+  end
+
+  def test_for_high_card_with_match
+    poker = Game.new
+    poker.deal
+    poker.white.hand = ["C14", "C11", "C10", "S2", "D7"]
+    poker.black.hand = ["S5", "S9", "D9", "H14", "H12"]
+    print poker.deck
+    assert_equal(
+      [0],
+      poker.checker.check_high_card(poker.white, poker.black)
+    )
   end
 
   def test_return_suits_return_sorted_array

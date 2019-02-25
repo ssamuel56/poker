@@ -47,4 +47,18 @@ class Game
     end
   end
 
+  def return_suits(player)
+    player_compare = Array.new
+    player.hand.length.times do |i|
+      player_compare << player.hand[i][1..-1].to_i
+    end
+    return player_compare.sort.reverse
+  end
+
+  def check_high_card
+    [
+        return_suits(@white)[0] <=> return_suits(@black)[0]
+    ]
+  end
+
 end
